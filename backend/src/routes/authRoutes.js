@@ -5,6 +5,40 @@ const User = require("../models/User");
 
 const router = express.Router();
 
+/**
+ * @swagger
+ * tags:
+ *   name: Auth
+ *   description: Authentication APIs
+ */
+
+/**
+ * @swagger
+ * /api/v1/auth/register:
+ *   post:
+ *     summary: Register new user
+ *     tags: [Auth]
+ */
+
+/**
+ * @swagger
+ * /api/v1/auth/login:
+ *   post:
+ *     summary: Login user and receive JWT
+ *     tags: [Auth]
+ */
+
+/**
+ * @swagger
+ * /api/v1/auth/me:
+ *   get:
+ *     summary: Get logged-in user
+ *     tags: [Auth]
+ *     security:
+ *       - bearerAuth: []
+ */
+
+
 router.post("/register", register);
 router.post("/login", login);
 
