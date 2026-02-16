@@ -7,6 +7,54 @@ const role = require("../middlewares/roleMiddleware");
 
 const router = express.Router();
 
+/**
+ * @swagger
+ * tags:
+ *   name: Orders
+ */
+
+/**
+ * @swagger
+ * /api/v1/orders/create:
+ *   post:
+ *     summary: Create order from cart
+ *     tags: [Orders]
+ *     security:
+ *       - bearerAuth: []
+ */
+
+
+/**
+ * @swagger
+ * /api/v1/orders/my-orders:
+ *   get:
+ *     summary: Get user orders
+ *     tags: [Orders]
+ *     security:
+ *       - bearerAuth: []
+ */
+
+/**
+ * @swagger
+ * /api/v1/orders/{orderId}/cancel:
+ *   patch:
+ *     summary: Cancel order
+ *     tags: [Orders]
+ *     security:
+ *       - bearerAuth: []
+ */
+
+/**
+ * @swagger
+ * /api/v1/orders/{orderId}/status:
+ *   patch:
+ *     summary: Update order status (Admin)
+ *     tags: [Orders]
+ *     security:
+ *       - bearerAuth: []
+ */
+
+
 router.post("/create", auth, async (req, res) => {
 
   const cart = await Cart.findOne({ user: req.user.id })
