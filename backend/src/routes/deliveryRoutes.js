@@ -6,6 +6,34 @@ const role = require("../middlewares/roleMiddleware");
 
 const router = express.Router();
 
+/**
+ * @swagger
+ * tags:
+ *   name: Delivery
+ */
+
+/**
+ * @swagger
+ * /api/v1/delivery/assign/{orderId}:
+ *   post:
+ *     summary: Assign delivery partner
+ *     tags: [Delivery]
+ *     security:
+ *       - bearerAuth: []
+ */
+
+
+/**
+ * @swagger
+ * /api/v1/delivery/{deliveryId}/status:
+ *   patch:
+ *     summary: Update delivery status
+ *     tags: [Delivery]
+ *     security:
+ *       - bearerAuth: []
+ */
+
+
 router.post("/assign/:orderId", auth, role("delivery"), async (req, res) => {
 
   const order = await Order.findById(req.params.orderId);
