@@ -4,6 +4,56 @@ const auth = require("../middlewares/authMiddleware");
 
 const router = express.Router();
 
+/**
+ * @swagger
+ * tags:
+ *   name: Cart
+ */
+
+/**
+ * @swagger
+ * /api/v1/cart:
+ *   get:
+ *     summary: Get user cart
+ *     tags: [Cart]
+ *     security:
+ *       - bearerAuth: []
+ */
+
+
+/**
+ * @swagger
+ * /api/v1/cart/add:
+ *   post:
+ *     summary: Add item to cart
+ *     tags: [Cart]
+ *     security:
+ *       - bearerAuth: []
+ */
+
+
+/**
+ * @swagger
+ * /api/v1/cart/update:
+ *   patch:
+ *     summary: Update cart item quantity
+ *     tags: [Cart]
+ *     security:
+ *       - bearerAuth: []
+ */
+
+
+/**
+ * @swagger
+ * /api/v1/cart/remove/{menuItemId}:
+ *   delete:
+ *     summary: Remove item from cart
+ *     tags: [Cart]
+ *     security:
+ *       - bearerAuth: []
+ */
+
+
 // Add to Cart
 router.post("/add", auth, async (req, res) => {
   const { menuItemId, quantity } = req.body;
