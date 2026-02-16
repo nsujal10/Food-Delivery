@@ -3,6 +3,29 @@ const MenuItem = require("../models/MenuItem");
 
 const router = express.Router();
 
+/**
+ * @swagger
+ * tags:
+ *   name: Menu
+ */
+
+/**
+ * @swagger
+ * /api/v1/menu:
+ *   post:
+ *     summary: Add menu item
+ *     tags: [Menu]
+ */
+
+/**
+ * @swagger
+ * /api/v1/menu/{restaurantId}:
+ *   get:
+ *     summary: Get menu by restaurant
+ *     tags: [Menu]
+ */
+
+
 // Create Menu Item
 router.post("/", async (req, res) => {
   const item = await MenuItem.create(req.body);
