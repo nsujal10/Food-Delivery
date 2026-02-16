@@ -6,6 +6,43 @@ const role = require("../middlewares/roleMiddleware");
 
 
 const router = express.Router();
+
+/**
+ * @swagger
+ * tags:
+ *   name: Reviews
+ */
+
+/**
+ * @swagger
+ * /api/v1/reviews:
+ *   post:
+ *     summary: Add review
+ *     tags: [Reviews]
+ *     security:
+ *       - bearerAuth: []
+ */
+
+
+/**
+ * @swagger
+ * /api/v1/reviews/{restaurantId}:
+ *   get:
+ *     summary: Get restaurant reviews
+ *     tags: [Reviews]
+ */
+
+
+/**
+ * @swagger
+ * /api/v1/reviews/{reviewId}:
+ *   delete:
+ *     summary: Delete review
+ *     tags: [Reviews]
+ *     security:
+ *       - bearerAuth: []
+ */
+
 router.post("/", auth, async (req, res) => {
 
   const { restaurantId, rating, comment } = req.body;
