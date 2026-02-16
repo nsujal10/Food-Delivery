@@ -1,9 +1,12 @@
 const express = require("express");
 const Restaurant = require("../models/Restaurant");
+const auth = require("../middlewares/authMiddleware");
+const role = require("../middlewares/roleMiddleware");
 
 const router = express.Router();
 
-router.post("/", async (req, res) => {
+// Admin only create restaurant
+router.post("/", auth, role("admin"), async (req, res) => {
   const restaurant = await Restaurant.create(req.body);
   res.json(restaurant);
 });

@@ -7,6 +7,12 @@ const orderRoutes = require("./routes/orderRoutes");
 
 const authRoutes = require("./routes/authRoutes");
 const restaurantRoutes = require("./routes/restaurantRoutes");
+const paymentRoutes = require("./routes/paymentRoutes");
+const reviewRoutes = require("./routes/reviewRoutes");
+const deliveryRoutes = require("./routes/deliveryRoutes");
+
+
+
 
 const app = express();
 
@@ -25,5 +31,11 @@ app.use("/api/v1/restaurants", restaurantRoutes);
 app.use("/api/v1/menu", menuRoutes);
 app.use("/api/v1/cart", cartRoutes);
 app.use("/api/v1/orders", orderRoutes);
+
+app.use("/api/v1/payments", paymentRoutes);
+
+app.use("/api/v1/reviews", reviewRoutes);
+
+app.use("/api/v1/delivery", deliveryRoutes);
 
 module.exports = app;
