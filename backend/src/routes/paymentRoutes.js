@@ -5,6 +5,33 @@ const auth = require("../middlewares/authMiddleware");
 
 const router = express.Router();
 
+/**
+ * @swagger
+ * tags:
+ *   name: Payments
+ */
+
+/**
+ * @swagger
+ * /api/v1/payments/pay/{orderId}:
+ *   post:
+ *     summary: Process payment
+ *     tags: [Payments]
+ *     security:
+ *       - bearerAuth: []
+ */
+
+/**
+ * @swagger
+ * /api/v1/payments/my-payments:
+ *   get:
+ *     summary: Get payment history
+ *     tags: [Payments]
+ *     security:
+ *       - bearerAuth: []
+ */
+
+
 // Simulate Payment
 router.post("/pay/:orderId", auth, async (req, res) => {
 
